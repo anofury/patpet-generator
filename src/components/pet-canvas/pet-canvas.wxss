@@ -1,0 +1,9 @@
+.canvas {
+  border: 2px solid #fdcf4a;
+  width: 150px;
+  height: 150px;
+  background: #fffbf3;
+  image-rendering: crisp-edges;
+  margin: 20px 0 10px 0;
+  /* box-sizing: border-box; */
+}

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "pet-canvas": "/components/pet-canvas/pet-canvas"
+  },
+  "navigationStyle": "default",
+  "navigationBarTitleText": "Patpet生成器",
+  "navigationBarTextStyle": "white",
+  "navigationBarBackgroundColor": "#fdcf4a"
+}

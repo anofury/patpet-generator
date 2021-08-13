@@ -1,0 +1,6 @@
+<!-- dragable-canvas 组件 -->
+<canvas 
+  type="2d" id="{{cId}}" class="canvas" disable-scroll="true"
+  bindtouchstart="onTouchStart" bindtouchmove="onTouchMove" 
+  bindtouchend="onTouchEnd" bindtouchcancel="onTouchEnd"
+></canvas>

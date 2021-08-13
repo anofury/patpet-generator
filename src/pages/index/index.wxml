@@ -1,0 +1,62 @@
+<!-- index.wxml -->
+<view class="pet-pet">
+    <view class="pet-main">
+        <pet-canvas c-id="petcanvas" id="petcanvas" c-width="112" c-height="112" b-width="150"
+            b-height="150" chosen-image="{{chosenImagePath}}">
+        </pet-canvas>
+
+        <view class="slider-block">
+            <text>速度</text>
+            <slider bindchange="changeHandler" data-prop="speed" min="1" max="10" step="1" value="{{speed}}" show-value
+                backgroundColor="#feecba" activeColor="#fdcf4a" block-size="20" block-color="#fdcf4a" />
+        </view>
+        <view class="slider-block">
+            <text>幅度</text>
+            <slider bindchanging="changeHandler" bindchange="changeHandler" data-prop="range" min="1" max="10" step="1"
+                value="{{range}}" show-value class="slider" backgroundColor="#feecba" activeColor="#fdcf4a"
+                block-size="20" block-color="#fdcf4a" />
+        </view>
+        <view class="slider-block">
+            <text>尺寸</text>
+            <slider bindchanging="changeHandler" bindchange="changeHandler" data-prop="size" min="1" max="10" step="1"
+                value="{{size}}" show-value class="slider" backgroundColor="#feecba" activeColor="#fdcf4a"
+                block-size="20" block-color="#fdcf4a" />
+        </view>
+        <view class="slider-block">
+            <view class="slider-sub-block">
+                <text>翻转</text>
+                <switch bindchange="changeHandler" data-prop="flip" color="#fdcf4a" checked="{{flip}}" />
+            </view>
+            <view class="slider-sub-block">
+                <text>反锯齿</text>
+                <switch bindchange="changeHandler" data-prop="smooth" color="#fdcf4a" checked="{{smooth}}" />
+            </view>
+        </view>
+
+        <view class="btn-block">
+            <button bindtap="onReset" size="custom" hover-class="btn-hover">重置</button>
+            <button bindtap="onChooseImage" size="custom" hover-class="btn-hover">相册</button>
+            <button bindtap="onConvertToGif" size="custom" hover-class="btn-hover">{{drawing?'生成中..':'生成'}}</button>
+        </view>
+
+        <view class="result-block" wx:if="{{resultBase64}}">
+            <image src="{{resultBase64}}" bindtap="onPreviewImage"></image>
+            <button bindtap="onSaveGifToPhotosAlbum" size="custom" hover-class="btn-hover">保存到相册</button>
+        </view>
+    </view>
+
+    <view class="pet-tips">
+        <view class="tips-block">
+            <text>设计参考于</text>
+            <text class="import" bindtap="onSetClipBoard" data-clip="https://benisland.neocities.org/petpet/">petpet generator</text>
+            <text>. 格式编码基于</text>
+            <text class="import" bindtap="onSetClipBoard" data-clip="https://github.com/jnordberg/gif.js">gif.js</text>
+            <text>.</text>
+        </view>
+        <view class="tips-block">
+            <text>Made with</text>
+            <text class="love">❤</text>
+            <text>by Found.</text>
+        </view>
+    </view>
+</view>
